@@ -1,0 +1,34 @@
+# Python virtual environments (recreated per-machine by inference.sh)
+*/.venv/
+.venv/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# HuggingFace cache lives OUTSIDE the repo (see config.sh) — but ignore any local stragglers
+hf_cache/
+.cache/
+
+# Model weights / checkpoints / large artifacts
+*.pth
+*.pt
+*.bin
+*.safetensors
+LIVE/model_weight/
+LIVE/data/
+LIVE/result/
+
+# ICV run logs
+ICV/logger/
+*.log
+
+# Env files with secrets
+.env
+
+# OS cruft
+.DS_Store

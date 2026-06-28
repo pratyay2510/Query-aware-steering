@@ -1,0 +1,20 @@
+# ICV inference / demo dependencies — verified working on Python 3.10 + CUDA 12.x.
+# (Upstream requirements were missing bitsandbytes and pulled heavy deps that the
+#  demo does not need; trimmed to what the in-context-vector demo actually uses.)
+torch==2.1.2
+transformers==4.37.2
+accelerate==0.25.0
+bitsandbytes==0.43.1        # required for 8-bit loading (load_in_8bit) — was missing upstream
+datasets==2.16.1            # imported at top of tasks/base.py
+numpy==1.25.2
+tqdm
+ipykernel                   # to run demo_notebook.ipynb
+
+# --- Optional: only needed for full paper reproduction, NOT for the demo/inference ---
+# parlai==1.7.2     # evaluation.py -> OffensiveLanguageClassifier (paradetox eval)
+# fschat==0.2.35    # tasks/jailbreak.py -> conversation templates
+# evaluate==0.4.0
+# peft==0.5.0
+# openai==1.35.5
+# nltk==3.8.1
+# python-dotenv==1.0.1

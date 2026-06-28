@@ -1,0 +1,21 @@
+# LIVE — minimal environment to import the codebase and parse its Hydra configs.
+#
+# NOTE: LIVE inference is DEFERRED in this workspace (it needs ~16-18 GB
+# multimodal models, the COCO/VQAv2/OKVQA datasets, AND a trained ICV checkpoint
+# that the authors do not publish). This minimal set lets `inference.sh` verify
+# the environment is healthy. For the full training/inference stack use the
+# authors' frozen environment in `requirements-full.txt` PLUS the extra steps in
+# the README:
+#     pip install -r requirements-full.txt
+#     pip install transformers==4.28.1                 # only for OpenFlamingo
+#     pip install git+https://github.com/ForJadeForest/lmm_icl_interface.git
+#     pip install git+https://github.com/davidbau/baukit.git
+torch==2.1.2
+numpy==1.26.4               # pin <2: torch 2.1.2 is built against NumPy 1.x
+transformers==4.38.2
+hydra-core==1.3.2
+omegaconf==2.3.0
+python-dotenv==1.0.1
+loguru==0.7.2
+more-itertools==10.2.0
+pillow==10.2.0
