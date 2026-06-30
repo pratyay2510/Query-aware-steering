@@ -26,11 +26,11 @@ applied to **every** input — which is why a refusal vector raises refusal *ind
 
 CAST adds a **condition gate** (paper §3.1):
 
-$$\boxed{\;\mathbf{h}' \leftarrow \mathbf{h} + f\!\big(\operatorname{sim}(\mathbf{h},\operatorname{proj}_{\mathbf c}\mathbf{h})\big)\cdot \alpha\,\mathbf{v}\;}$$
+$$\boxed{\;\mathbf{h}' \leftarrow \mathbf{h} + f\!\big(\mathrm{sim}(\mathbf{h},\mathrm{proj}_{\mathbf c}\mathbf{h})\big)\cdot \alpha\,\mathbf{v}\;}$$
 
-where $\mathbf c$ is the **condition vector**, $\mathbf v$ the **behavior vector**, $\operatorname{sim}(\mathbf a,\mathbf b)=\frac{\mathbf a\cdot\mathbf b}{\lVert\mathbf a\rVert\lVert\mathbf b\rVert}$, and the projection $\operatorname{proj}_{\mathbf c}\mathbf{h}$ collapses $\mathbf h$ onto the condition direction. Define the scalar **condition score**
+where $\mathbf c$ is the **condition vector**, $\mathbf v$ the **behavior vector**, $\mathrm{sim}(\mathbf a,\mathbf b)=\frac{\mathbf a\cdot\mathbf b}{\lVert\mathbf a\rVert\lVert\mathbf b\rVert}$, and the projection $\mathrm{proj}_{\mathbf c}\mathbf{h}$ collapses $\mathbf h$ onto the condition direction. Define the scalar **condition score**
 
-$$s(\mathbf h) \;:=\; \operatorname{sim}(\mathbf h,\operatorname{proj}_{\mathbf c}\mathbf h)$$
+$$s(\mathbf h) \;:=\; \mathrm{sim}(\mathbf h,\mathrm{proj}_{\mathbf c}\mathbf h)$$
 
 — operationally this is the per‑layer cosine returned by the library's `get_condition_similarities()`. The gate is a **hard step** (paper §3.1):
 
