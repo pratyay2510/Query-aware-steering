@@ -6,12 +6,11 @@ cd "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 git add -A
 
 if git diff --cached --quiet; then
-  echo "Nothing to commit — working tree clean."
-  exit 0
+  echo "Nothing new to commit — pushing any existing commits."
+else
+  read -rp "Commit message: " msg
+  msg="${msg:-update}"
+  git commit -m "$msg"
 fi
 
-read -rp "Commit message: " msg
-msg="${msg:-update}"
-
-git commit -m "$msg"
 git push -u origin main
