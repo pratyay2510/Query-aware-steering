@@ -1,0 +1,16 @@
+accelerate>=0.26.0
+datasets
+huggingface_hub
+ipykernel
+jupyter
+nbclient
+nbformat
+numpy
+pandas
+pyarrow
+safetensors
+tokenizers
+torch
+tqdm
+transformers
+umap-learn

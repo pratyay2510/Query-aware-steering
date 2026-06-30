@@ -1,34 +1,107 @@
-# Python virtual environments (recreated per-machine by inference.sh)
-*/.venv/
-.venv/
-
-# Python caches
+# Python bytecode and caches
 __pycache__/
 *.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# Python virtual environments and packaging output
+.venv/
+*/.venv/
+venv/
+env/
+ENV/
+__pypackages__/
 *.egg-info/
+.eggs/
+build/
+dist/
+wheels/
 
-# Notebook checkpoints
+# Jupyter/IPython local state
 .ipynb_checkpoints/
+profile_default/
+ipython_config.py
 
-# HuggingFace cache lives OUTSIDE the repo (see config.sh) — but ignore any local stragglers
+# HuggingFace, dataset, and model caches should live outside the repo.
 hf_cache/
 .cache/
+cache-dirs/
+datasets/
+hub/
+models/
+embeddings/
 
-# Model weights / checkpoints / large artifacts
+# Model weights, checkpoints, and serialized run artifacts
 *.pth
 *.pt
+*.ckpt
 *.bin
 *.safetensors
+*.onnx
+*.npz
+checkpoints/
+model_weight/
 LIVE/model_weight/
 LIVE/data/
-LIVE/result/
 
-# ICV run logs
-ICV/logger/
+# Experiment outputs and logs
+outputs/
+output/
+results/
+result/
+runs/
+wandb/
+lightning_logs/
+logs/
 *.log
+slurm-*.out
+slurm-*.err
+ICV/logger/
+LIVE/result/
+LIVE/temp*/
+LIVE/icl_inferencer/
+LIVE/requirements_repo/
+LIVE/*result*/
+LIVE/*output*/
+ICL/outputs/
+ICL/output/
+ICL/results/
+ICL/result/
+ICL/embeddings/
+ICL/cache-dirs/
+ICL/datasets/
+ICL/*_no_icl.csv
+ICL/*_no_icl.parquet
+ICL/*_no_icl_summary.csv
+ICL/*_fixed_contexts.csv
+ICL/*_oracle_context.csv
+ICL/*_oracle_context.parquet
+ICL/*_oracle_summary.csv
+ICL/*_success_matrix.csv
 
-# Env files with secrets
-.env
+# Scratch files
+tmp/
+temp/
+temp*/
 
-# OS cruft
+# Editor and OS noise
+.vscode/
+.idea/
+*.swp
+*.swo
 .DS_Store
+Thumbs.db
+
+# Environment files may contain tokens or machine-local paths.
+.env
+.env.*
+!.env.example
